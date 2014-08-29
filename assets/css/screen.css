@@ -182,8 +182,8 @@ body {
     font-feature-settings: 'kern' 1;
     height: 100%;
     max-height: 100%;
-    font-family: "PT Serif", serif;
-    font-size: 2.2rem;
+    font-family: "Crimson Text", serif;
+    font-size: 2.6rem;
     line-height: 1.7em;
     color: #3A4145;
 }
@@ -206,7 +206,7 @@ h4, h5, h6 {
     color: #2E2E2E;
     line-height: 1.15em;
     margin: 0 0 0.3em 0;
-    font-family: "Open Sans", sans-serif;
+    font-family: "PT Sans", sans-serif;
 }
 
 h1 {
@@ -324,7 +324,7 @@ mark {
 
 code, tt {
     padding: 1px 3px;
-    font-family: Inconsolata, monospace, sans-serif;
+    font-family: Consolas, Inconsolata, monospace, sans-serif;
     font-size: 0.85em;
     white-space: pre-wrap;
     border: #E3EDF3 1px solid;
@@ -337,14 +337,16 @@ pre {
     box-sizing: border-box;
     margin: 0 0 1.7em 0;
     border: #E3EDF3 1px solid;
-    width: 100%;
-    padding: 10px;
-    font-family: Inconsolata, monospace, sans-serif;
-    font-size: 0.9em;
+    width: 126%;
+    padding: 10px 20px;
+    font-family: Consolas, Inconsolata, monospace, sans-serif;
+    font-size: 0.7em;
     white-space: pre;
     overflow: auto;
     background: #F7FAFB;
     border-radius: 3px;
+    margin-left: -13%;
+
 }
 
 pre code, tt {
@@ -658,7 +660,7 @@ margin on the iframe, cause it breaks stuff. */
     font-size: 5.6rem;
     letter-spacing: -1px;
     font-weight: 700;
-    font-family: "Open Sans", sans-serif;
+    font-family: "PT Sans", sans-serif;
     color: #fff;
 }
 
@@ -709,11 +711,9 @@ margin on the iframe, cause it breaks stuff. */
 /* Every post, on every page, gets this style on its <article> tag */
 .post {
     position: relative;
-    width: 80%;
-    max-width: 780px;
-    margin: 4rem auto;
-    padding-bottom: 4rem;
-    border-bottom: #EBF2F6 1px solid;
+    width: 100%;
+    width: 960px;
+    margin: 6rem auto;
     word-break: break-word;
     hyphens: auto;
 }
@@ -739,8 +739,8 @@ margin on the iframe, cause it breaks stuff. */
 
 body:not(.post-template) .post-title {
     font-size: 4rem;
-}
 
+}
 .post-title a {
     text-decoration: none;
 }
@@ -871,6 +871,17 @@ body:not(.post-template) .post-title {
 /* Kill that stylish little circle that was on the border, too */
 .post-template .post:after {
     display: none;
+}
+
+.post-content {
+}
+
+.post-content a {
+    color: #4c94c1;
+}
+
+.post-content a:hover {
+    color: #5ea3ce;
 }
 
 /* Keep images centred and within the bounds of the post-width */
@@ -1374,7 +1385,7 @@ body:not(.post-template) .post-title {
    11. Media Queries - Smaller than 900px
    ========================================================================== */
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 960px) {
 
     .main-nav {
         padding: 15px;
@@ -1638,6 +1649,14 @@ body:not(.post-template) .post-title {
 
     h6 {
         font-size: 1.7rem;
+    }
+
+    pre {
+        width: auto;
+        width: calc(100% + 32px); /* expand with to image + margins */
+        margin: 0 -16px; /* get rid of margins */
+        min-width: 0;
+        max-width: 112%; /* fallback when calc doesn't work */
     }
 
     body:not(.post-template) .post-title {
